@@ -35,7 +35,7 @@ def read_txt(file):
         res_list.append(list(map(int, line.strip().split(' '))))      
     return res_list
 
-base_path = "../../cs3319-02-project-1-graph-based-recommendation"
+base_path = "kaggle/input/cs3319-02-project-1-graph-based-recommendation"
 
 
 cite_file = "paper_file_ann.txt"

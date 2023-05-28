@@ -2,7 +2,7 @@
 Note that part of these codes are from [OPENHGNN](https://github.com/BUPT-GAMMA/OpenHGNN)
 ## Usage
 
-**First**, add dataset folder `cs3319-02-project-1-graph-based-recommendation` just under the root directory.
+**First**, add dataset folder `cs3319-02-project-1-graph-based-recommendation` just parallel with the root directory.
 
 **Second**, run
 ```

@@ -2,11 +2,11 @@ import torch as th
 import torch.nn as nn
 import dgl.nn as dglnn
 import torch.nn.functional as F
-from model.base_model import BaseModel
-from utils.CompConv import CompConv
-from utils.utils import edata_in_out_mask
-from utils.utils import get_nodes_dict
-from utils.utils import ccorr
+from compgcnforkaggle.model.base_model import BaseModel
+from compgcnforkaggle.utils.CompConv import CompConv
+from compgcnforkaggle.utils.utils import edata_in_out_mask
+from compgcnforkaggle.utils.utils import get_nodes_dict
+from compgcnforkaggle.utils.utils import ccorr
 
 class CompGCN(BaseModel):
     """

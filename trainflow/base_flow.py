@@ -5,8 +5,8 @@ from abc import ABC, abstractmethod
 
 # from tasks import build_task
 # from ..layers.HeteroLinear import HeteroFeature
-from utils.utils import get_nodes_dict
-from tasks.link_prediction import LinkPrediction
+from compgcnforkaggle.utils.utils import get_nodes_dict
+from compgcnforkaggle.tasks.link_prediction import LinkPrediction
 from dgl.nn import HeteroEmbedding, HeteroLinear
 class HeteroFeature(nn.Module):
     r"""

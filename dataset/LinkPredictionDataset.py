@@ -6,9 +6,9 @@ import torch
 from dgl.data.knowledge_graph import load_data
 from abc import ABC, ABCMeta, abstractmethod
 from dgl.data.utils import load_graphs
-from dataset.base_dataset import BaseDataset
+from compgcnforkaggle.dataset.base_dataset import BaseDataset
 # from . import AcademicDataset, HGBDataset, OHGBDataset
-from utils.utils import add_reverse_edges
+from compgcnforkaggle.utils.utils import add_reverse_edges
 # from dgl.data.utils import load_graphs
 
 # __all__ = ['LinkPredictionDataset', 'HGB_LinkPrediction']

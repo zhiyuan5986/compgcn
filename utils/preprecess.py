@@ -35,7 +35,7 @@ def read_txt(file):
         res_list.append(list(map(int, line.strip().split(' '))))      
     return res_list
 
-base_path = "../../cs3319-02-project-1-graph-based-recommendation"
+base_path = "/kaggle/input/cs3319-02-project-1-graph-based-recommendation"
 
 
 cite_file = "paper_file_ann.txt"
@@ -117,7 +117,7 @@ g = dgl.heterograph(graph_data)
 print(g)
 g.nodes['paper'].data['h'] = paper_feature
 g.nodes['author'].data['h'] = torch.randn(len(node_authors), paper_feature.shape[1])
-dgl.save_graphs("./graph/demo_graph.bin", g)
+dgl.save_graphs("demo_graph.bin", g)
 
 pred_network = dgl.heterograph({
    ('author', 'ref', 'paper'): (pred_ref_torch_edges[:, 0], pred_ref_torch_edges[:, 1]),
@@ -125,7 +125,7 @@ pred_network = dgl.heterograph({
 })
 pred_network.nodes['paper'].data['h'] = paper_feature
 pred_network.nodes['author'].data['h'] = g.nodes['author'].data['h']
-dgl.save_graphs("./graph/test_graph.bin", pred_network)
+dgl.save_graphs("test_graph.bin", pred_network)
 
 
 

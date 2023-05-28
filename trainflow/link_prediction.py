@@ -3,10 +3,10 @@ import torch
 from torch import nn
 from tqdm import tqdm
 import torch.nn.functional as F
-from trainflow.base_flow import BaseFlow
+from compgcnforkaggle.trainflow.base_flow import BaseFlow
 # from ..models import build_model
-from model.CompGCN import *
-from utils.utils import EarlyStopping, add_reverse_edges, get_ntypes_from_canonical_etypes
+from compgcnforkaggle.model.CompGCN import *
+from compgcnforkaggle.utils.utils import EarlyStopping, add_reverse_edges, get_ntypes_from_canonical_etypes
 # NOTE: myself
 import numpy as np
 from dgl.sampling import global_uniform_negative_sampling
@@ -130,13 +130,13 @@ class LinkPrediction(BaseFlow):
         # Test
         ##################################################
         self.model.eval()
-        pred_network, _ = dgl.load_graphs("./graph/test_graph.bin")
+        pred_network, _ = dgl.load_graphs("test_graph.bin")
         pred_network = pred_network[0].long().to(self.device)
         h_dict = self.model.input_feature()
         embedding = self.model(self.train_hg, h_dict)
         score = torch.sigmoid(self.task.ScorePredictor(pred_network, embedding, self.r_embedding))
         score = score.detach().cpu().numpy()
-        np.save("./output/score.npy", score)
+        np.save("score.npy", score)
         ##################################################
         if self.args.test_flag:
             if self.args.dataset in ['HGBl-amazon', 'HGBl-LastFM', 'HGBl-PubMed']:

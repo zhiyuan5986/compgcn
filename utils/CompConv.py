@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 import dgl.function as fn
 from dgl.utils import expand_as_pair
-from .utils import ccorr
+from compgcnforkaggle.utils.utils import ccorr
 from dgl import DGLError
 
 

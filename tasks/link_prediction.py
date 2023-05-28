@@ -3,10 +3,10 @@ import torch
 import torch.nn.functional as F
 from dgl.dataloading.negative_sampler import Uniform, GlobalUniform
 from dgl.sampling import global_uniform_negative_sampling
-from tasks.base_task import BaseTask
+from compgcnforkaggle.tasks.base_task import BaseTask
 # from dataset import build_dataset
-from dataset.LinkPredictionDataset import DEMO_LinkPrediction
-from utils.evaluator import Evaluator
+from compgcnforkaggle.dataset.LinkPredictionDataset import DEMO_LinkPrediction
+from compgcnforkaggle.utils.evaluator import Evaluator
 
 
 class LinkPrediction(BaseTask):

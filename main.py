@@ -1,8 +1,8 @@
 import argparse
 import dgl
 import torch
-from trainflow.link_prediction import LinkPrediction
-from utils.logger import Logger
+from compgcnforkaggle.trainflow.link_prediction import LinkPrediction
+from compgcnforkaggle.utils.logger import Logger
 import pandas as pd
 import numpy as np
 import os
@@ -55,9 +55,9 @@ if __name__ == '__main__':
     flow.train()
 
     # Get csv file
-    score = np.load("./output/score.npy")
+    score = np.load("score.npy")
     labels = score >= 0.5
     indexes = np.arange(len(labels)).reshape((-1,1))
     labels = labels.astype(np.int).reshape((-1,1))
     labels_df = pd.DataFrame(np.concatenate([indexes, labels],axis=1), columns=["Index", "Predicted"])
-    labels_df.to_csv("./output/CompGCN_results.csv", index=False, header=True)
+    labels_df.to_csv("CompGCN_results.csv", index=False, header=True)
